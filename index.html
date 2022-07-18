@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulaire.css">
+    <title>formulaire d'inscription</title>
+</head>
+<body>
+    <section>
+        <div class="inscription">
+            <h2>Inscription</h2>
+            <form action="" id="formulaire">
+                <div class="box">
+                    <input type="text" id="surname" class="input" placeholder="Surname">
+                    <input type="text" id="name" class="input" placeholder="Name">
+                    <input type="text" id="pseudo" class="input" placeholder="Pseudo">
+                    <input type="text" id="mail" class="input" placeholder="Email">
+                    <span id="text"></span>
+                    <input type="password" id="password" class="input" placeholder="Password">
+
+                </div>
+            </form>
+            <div class="buttons">
+                <div class="submit">
+                    <button>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        submit
+                    </button>
+                </div>
+                <div class="quit">
+                    <a href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        quit
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById("mail").addEventListener('input',function()
+        {
+            var mail= document.getElementById("mail").value;
+            var text= document.getElementById("text");
+            var pattern= /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if(mail.match(pattern))
+            {
+                text.innerHTML ="Votre addresse mail est valide";
+                text.style.color="#00ff00";
+            }
+            else
+            {
+                text.innerHTML ="Votre addresse mail est invalide";
+                text.style.color="red"; 
+            }
+            if(mail == "")
+            {
+                text.innerHTML ="";
+                text.style.color="red";
+            }
+        })
+    </script>
+</body>
+</html>
